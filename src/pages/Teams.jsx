@@ -1,4 +1,4 @@
-import React from 'react'
+import CardTeams from '../components/CardTeams'
 
 function Teams() {
     const f1Data = {
@@ -22,28 +22,7 @@ const { teams } = f1Data;
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-8">Formula 1 Teams 2025</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
-          {teams.map(team => (
-            <button 
-              key={team.id} 
-              className="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/60 transform transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
-              style={{ borderTop: `6px solid ${team.color}` }}
-            >
-              <div className="p-6 flex flex-col items-center gap-3">
-                <img 
-                  src={team.logo} 
-                  alt={`${team.name} Logo`} 
-                  className="w-20 h-20 sm:w-24 sm:h-24 object-contain mb-2 rounded-full shadow"
-                  onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/100x100/cccccc/000000?text=Error'; }}
-                />
-                <h3 
-                  className="text-base sm:text-lg font-bold text-center"
-                  style={{ color: team.color }}
-                >
-                  {team.name}
-                </h3>
-              </div>
-            </button>
-          ))}
+          <CardTeams teams={teams} />
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from 'react'
+import CardRaces from '../components/CardRaces'
 
 function Races() {
 const f1Data = {
@@ -23,20 +24,7 @@ const { races } = f1Data;
         <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-8">Race Calendar 2025</h2>
         <div className="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 overflow-hidden">
           <ul className="divide-y divide-gray-200">
-            {races.map((race, index) => (
-              <li key={race.id} className="p-4 sm:p-5 hover:bg-gray-50">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
-                  <div className="text-red-600 font-bold text-lg w-8 text-center self-start sm:self-auto">{index + 1}</div>
-                  <div className="flex-grow">
-                    <p className="text-base sm:text-lg font-semibold text-gray-800">{race.name}</p>
-                    <p className="text-sm text-gray-500">{race.circuit}</p>
-                  </div>
-                  <div className="text-left sm:text-right mt-2 sm:mt-0">
-                    <p className="text-sm sm:text-base font-medium text-gray-900">{race.date}</p>
-                  </div>
-                </div>
-              </li>
-            ))}
+            <CardRaces races={races} />
           </ul>
         </div>
       </div>

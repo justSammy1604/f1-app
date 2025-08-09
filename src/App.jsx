@@ -1,32 +1,29 @@
 import React from 'react'
-import { useState } from 'react'
-import Teams from './components/Teams'
-import Races from './components/Races'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Teams from './pages/Teams'
+import Races from './pages/Races'
+import TeamPage from './pages/TeamPage'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
 
 function App() {
-  const [page, setPage] = useState('teams');
-
-  const renderPage = () => {
-    switch (page) {
-      case 'teams':
-        return <Teams />;
-      case 'races':
-        return <Races />;
-      default:
-        return <Teams />;
-    }
-  };
   return (
     <>
     <div className="min-h-screen flex flex-col antialiased">
-      <Navbar page={page} setPage={setPage} />
-      <main className="flex-grow">
-        {renderPage()}
-      </main>
-      <Footer />
+      <BrowserRouter>
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Navigate to="/teams" replace />} />
+            <Route path="/teams" element={<Teams />} />
+            <Route path="/teams/:teamId" element={<TeamPage />} />
+            <Route path="/races" element={<Races />} />
+            <Route path="*" element={<Navigate to="/teams" replace />} />
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
     </div>
   </>
   )
