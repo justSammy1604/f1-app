@@ -1,20 +1,33 @@
+import React from 'react'
 import { useState } from 'react'
 import Teams from './components/Teams'
 import Races from './components/Races'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import './App.css'
+
 
 function App() {
+  const [page, setPage] = useState('teams');
+
+  const renderPage = () => {
+    switch (page) {
+      case 'teams':
+        return <Teams />;
+      case 'races':
+        return <Races />;
+      default:
+        return <Teams />;
+    }
+  };
   return (
     <>
-    <h1 className='text-3xl font-bold'>Hello World!!</h1>
-    <Navbar />
-    <div className="container mx-auto">
-      <Teams />
-      <Races />
+<div className="min-h-screen bg-gray-100 flex flex-col">
+      <Navbar page={page} setPage={setPage} />
+      <main className="flex-grow">
+        {renderPage()}
+      </main>
+      <Footer />
     </div>
-    <Footer />
   </>
   )
 }
