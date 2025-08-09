@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+
 function Races() {
 const f1Data = {
     races: [
@@ -18,27 +18,29 @@ const f1Data = {
 const { races } = f1Data;
   return (
     <>
-       <div className="flex-grow bg-gray-100 py-12">
+       <section className="bg-gray-100/50 py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8">Race Calendar 2025</h2>
-        <div className="bg-white rounded-lg shadow-md">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-8">Race Calendar 2025</h2>
+        <div className="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 overflow-hidden">
           <ul className="divide-y divide-gray-200">
             {races.map((race, index) => (
-              <li key={race.id} className="p-4 hover:bg-gray-50 flex items-center space-x-4">
-                <div className="text-red-600 font-bold text-lg w-8 text-center">{index + 1}</div>
-                <div className="flex-grow">
-                  <p className="text-lg font-semibold text-gray-800">{race.name}</p>
-                  <p className="text-sm text-gray-500">{race.circuit}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-md font-medium text-gray-900">{race.date}</p>
+              <li key={race.id} className="p-4 sm:p-5 hover:bg-gray-50">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+                  <div className="text-red-600 font-bold text-lg w-8 text-center self-start sm:self-auto">{index + 1}</div>
+                  <div className="flex-grow">
+                    <p className="text-base sm:text-lg font-semibold text-gray-800">{race.name}</p>
+                    <p className="text-sm text-gray-500">{race.circuit}</p>
+                  </div>
+                  <div className="text-left sm:text-right mt-2 sm:mt-0">
+                    <p className="text-sm sm:text-base font-medium text-gray-900">{race.date}</p>
+                  </div>
                 </div>
               </li>
             ))}
           </ul>
         </div>
       </div>
-    </div>
+    </section>
     </>
   )
 }
