@@ -2,16 +2,16 @@ import { useParams, Link } from 'react-router-dom';
 
 const f1Data = {
   teams: [
-    { id: 'mercedes', name: 'Mercedes-AMG PETRONAS F1 Team', color: '#6CD3BF', logo: 'https://placehold.co/100x100/6CD3BF/000000?text=M', drivers: ['Lewis Hamilton', 'George Russell'] },
-    { id: 'red_bull', name: 'Oracle Red Bull Racing', color: '#1E5BC6', logo: 'https://placehold.co/100x100/1E5BC6/FFFFFF?text=RB', drivers: ['Max Verstappen', 'Sergio Pérez'] },
-    { id: 'ferrari', name: 'Scuderia Ferrari', color: '#F91536', logo: 'https://placehold.co/100x100/F91536/FFFFFF?text=F', drivers: ['Charles Leclerc', 'Carlos Sainz'] },
+    { id: 'mercedes', name: 'Mercedes-AMG PETRONAS F1 Team', color: '#6CD3BF', logo: 'https://placehold.co/100x100/6CD3BF/000000?text=M', drivers: ['Kimi Antonelli', 'George Russell'] },
+    { id: 'red_bull', name: 'Oracle Red Bull Racing', color: '#1E5BC6', logo: 'https://placehold.co/100x100/1E5BC6/FFFFFF?text=RB', drivers: ['Max Verstappen', 'Liam Lawson'] },
+    { id: 'ferrari', name: 'Scuderia Ferrari', color: '#F91536', logo: 'https://placehold.co/100x100/F91536/FFFFFF?text=F', drivers: ['Charles Leclerc', 'Lewis Hamilton'] },
     { id: 'mclaren', name: 'McLaren Formula 1 Team', color: '#F58020', logo: 'https://placehold.co/100x100/F58020/000000?text=ML', drivers: ['Lando Norris', 'Oscar Piastri'] },
     { id: 'aston_martin', name: 'Aston Martin Aramco F1 Team', color: '#358C75', logo: 'https://placehold.co/100x100/358C75/FFFFFF?text=AM', drivers: ['Fernando Alonso', 'Lance Stroll'] },
-    { id: 'alpine', name: 'BWT Alpine F1 Team', color: '#2293D1', logo: 'https://placehold.co/100x100/2293D1/FFFFFF?text=A', drivers: ['Esteban Ocon', 'Pierre Gasly'] },
-    { id: 'williams', name: 'Williams Racing', color: '#37BEDD', logo: 'https://placehold.co/100x100/37BEDD/000000?text=W', drivers: ['Alexander Albon', 'Logan Sargeant'] },
-    { id: 'rb', name: 'Visa Cash App RB F1 Team', color: '#4664C8', logo: 'https://placehold.co/100x100/4664C8/FFFFFF?text=RB', drivers: ['Yuki Tsunoda', 'Daniel Ricciardo'] },
-    { id: 'sauber', name: 'Stake F1 Team Kick Sauber', color: '#52E252', logo: 'https://placehold.co/100x100/52E252/000000?text=S', drivers: ['Valtteri Bottas', 'Zhou Guanyu'] },
-    { id: 'haas', name: 'MoneyGram Haas F1 Team', color: '#B6BABD', logo: 'https://placehold.co/100x100/B6BABD/000000?text=H', drivers: ['Kevin Magnussen', 'Nico Hülkenberg'] },
+    { id: 'alpine', name: 'BWT Alpine F1 Team', color: '#2293D1', logo: 'https://placehold.co/100x100/2293D1/FFFFFF?text=A', drivers: ['Franco Colapinto', 'Pierre Gasly'] },
+    { id: 'williams', name: 'Williams Racing', color: '#37BEDD', logo: 'https://placehold.co/100x100/37BEDD/000000?text=W', drivers: ['Alexander Albon', 'Carlos Sainz'] },
+    { id: 'rb', name: 'Visa Cash App RB F1 Team', color: '#4664C8', logo: 'https://placehold.co/100x100/4664C8/FFFFFF?text=RB', drivers: ['Yuki Tsunoda', 'Isack Hadjar'] },
+    { id: 'sauber', name: 'Stake F1 Team Kick Sauber', color: '#52E252', logo: 'https://placehold.co/100x100/52E252/000000?text=S', drivers: ['Nico Hülkenberg', 'Gabriel Bortoletto'] },
+    { id: 'haas', name: 'MoneyGram Haas F1 Team', color: '#B6BABD', logo: 'https://placehold.co/100x100/B6BABD/000000?text=H', drivers: ['Ollie Bearman', 'Esteban Ocon'] },
   ],
 };
 
