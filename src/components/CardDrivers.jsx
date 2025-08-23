@@ -4,7 +4,8 @@ function CardDrivers({ drivers }) {
       {drivers.map((driver) => (
         <div
           key={driver.id}
-          className="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 overflow-hidden text-left"
+          className="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 overflow-hidden text-left cursor-pointer hover:shadow-md transition"
+          onClick={() => window.location.href = `/driver/${driver.id}`}
         >
           <div className="p-6 flex flex-col items-center gap-3">
             <img

@@ -17,7 +17,14 @@ function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-2">
               <NavLink to="/teams" className={getLinkClass} onClick={() => setOpen(false)}>Teams</NavLink>
-              <NavLink to="/drivers" className={getLinkClass} onClick={() => setOpen(false)}>Drivers</NavLink>
+              <div className="relative group">
+                <NavLink to="/drivers" className={getLinkClass} onClick={() => setOpen(false)}>Drivers</NavLink>
+                <div className="absolute left-0 mt-1 hidden group-hover:block bg-gray-800 rounded-md shadow-lg py-2 min-w-[160px]">
+                  <NavLink to="/drivers/current" className={({isActive})=>`block px-4 py-1 text-sm ${isActive?'text-red-400':'text-gray-200 hover:text-white'}`}>Current</NavLink>
+                  <button onClick={()=>{const y=new Date().getFullYear(); window.location.href=`/drivers/${y}`}} className="block w-full text-left px-4 py-1 text-sm text-gray-200 hover:text-white">This Year</button>
+                  <NavLink to="/drivers/search/hamilton" className={({isActive})=>`block px-4 py-1 text-sm ${isActive?'text-red-400':'text-gray-200 hover:text-white'}`}>Search Example</NavLink>
+                </div>
+              </div>
               <NavLink to="/races" className={getLinkClass} onClick={() => setOpen(false)}>Races</NavLink>
             </div>
           </div>
@@ -48,7 +55,9 @@ function Navbar() {
         <div className="md:hidden border-t border-gray-800">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavLink to="/teams" className={getLinkClass} onClick={() => setOpen(false)}>Teams</NavLink>
+            <NavLink to="/teams/search/ferrari" className={getLinkClass} onClick={() => setOpen(false)}>Search Teams</NavLink>
             <NavLink to="/drivers" className={getLinkClass} onClick={() => setOpen(false)}>Drivers</NavLink>
+            <NavLink to="/drivers/current" className={getLinkClass} onClick={() => setOpen(false)}>Current Drivers</NavLink>
             <NavLink to="/races" className={getLinkClass} onClick={() => setOpen(false)}>Races</NavLink>
           </div>
         </div>
