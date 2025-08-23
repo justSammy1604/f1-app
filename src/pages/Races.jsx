@@ -1,36 +1,33 @@
-import React from 'react'
-import CardRaces from '../components/CardRaces'
+import { useState, useEffect } from 'react';
+import CardRaces from '../components/CardRaces';
+import { getRaces } from '../api/f1Api';
 
 function Races() {
-const f1Data = {
-    races: [
-    { id: 1, name: 'Bahrain Grand Prix', circuit: 'Bahrain International Circuit', date: 'Mar 02, 2025' },
-    { id: 2, name: 'Saudi Arabian Grand Prix', circuit: 'Jeddah Corniche Circuit', date: 'Mar 09, 2025' },
-    { id: 3, name: 'Australian Grand Prix', circuit: 'Albert Park Circuit', date: 'Mar 23, 2025' },
-    { id: 4, name: 'Japanese Grand Prix', circuit: 'Suzuka International Racing Course', date: 'Apr 06, 2025' },
-    { id: 5, name: 'Chinese Grand Prix', circuit: 'Shanghai International Circuit', date: 'Apr 20, 2025' },
-    { id: 6, name: 'Miami Grand Prix', circuit: 'Miami International Autodrome', date: 'May 04, 2025' },
-    { id: 7, name: 'Emilia Romagna Grand Prix', circuit: 'Imola Circuit', date: 'May 18, 2025' },
-    { id: 8, name: 'Monaco Grand Prix', circuit: 'Circuit de Monaco', date: 'May 25, 2025' },
-    { id: 9, name: 'Canadian Grand Prix', circuit: 'Circuit Gilles Villeneuve', date: 'Jun 08, 2025' },
-    { id: 10, name: 'Spanish Grand Prix', circuit: 'Circuit de Barcelona-Catalunya', date: 'Jun 22, 2025' },
-  ]
-}
-const { races } = f1Data;
+  const [races, setRaces] = useState([]);
+
+  useEffect(() => {
+    const fetchRaces = async () => {
+      const apiRaces = await getRaces();
+      setRaces(apiRaces);
+    };
+
+    fetchRaces();
+  }, []);
+
   return (
     <>
-       <section className="bg-gray-100/50 py-10 sm:py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-8">Race Calendar 2025</h2>
-        <div className="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 overflow-hidden">
-          <ul className="divide-y divide-gray-200">
-            <CardRaces races={races} />
-          </ul>
+      <section className="bg-gray-100/50 py-10 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-8">Race Calendar 2025</h2>
+          <div className="bg-white rounded-xl shadow-sm ring-1 ring-gray-200 overflow-hidden">
+            <ul className="divide-y divide-gray-200">
+              <CardRaces races={races} />
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
-  )
+  );
 }
 
-export default Races
+export default Races;

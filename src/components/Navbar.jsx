@@ -17,6 +17,7 @@ function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-2">
               <NavLink to="/teams" className={getLinkClass} onClick={() => setOpen(false)}>Teams</NavLink>
+              <NavLink to="/drivers" className={getLinkClass} onClick={() => setOpen(false)}>Drivers</NavLink>
               <NavLink to="/races" className={getLinkClass} onClick={() => setOpen(false)}>Races</NavLink>
             </div>
           </div>
@@ -47,6 +48,7 @@ function Navbar() {
         <div className="md:hidden border-t border-gray-800">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavLink to="/teams" className={getLinkClass} onClick={() => setOpen(false)}>Teams</NavLink>
+            <NavLink to="/drivers" className={getLinkClass} onClick={() => setOpen(false)}>Drivers</NavLink>
             <NavLink to="/races" className={getLinkClass} onClick={() => setOpen(false)}>Races</NavLink>
           </div>
         </div>
