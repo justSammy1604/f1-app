@@ -1,49 +1,37 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import Teams from './pages/Teams'
-import Races from './pages/Races'
-import TeamPage from './pages/TeamPage'
-import TeamSearch from './pages/TeamSearch'
-import Drivers from './pages/Drivers'
-import DriversYear from './pages/DriversYear'
-import DriversCurrent from './pages/DriversCurrent'
-import DriverDetail from './pages/DriverDetail'
-import DriverSearch from './pages/DriverSearch'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-
+import LandingPage from './pages/LandingPage.jsx'
+import F1Page from './pages/F1Page.jsx'
+import TeamsPage from './pages/f1/TeamsPage.jsx'
+import TeamDetailPage from './pages/f1/TeamDetailPage.jsx'
+import DriversPage from './pages/f1/DriversPage.jsx'
+import DriverDetailPage from './pages/f1/DriverDetailPage.jsx'
+import RacesPage from './pages/f1/RacesPage.jsx'
+import CircuitsPage from './pages/f1/CircuitsPage.jsx'
+import SeasonsPage from './pages/f1/SeasonsPage.jsx'
+import ResultsPage from './pages/f1/ResultsPage.jsx'
+import './App.css'
 
 function App() {
   return (
-    <>
-    <div className="min-h-screen flex flex-col antialiased">
-      <BrowserRouter>
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Navigate to="/teams" replace />} />
-            <Route path="/teams" element={<Teams />} />
-            <Route path="/teams/:teamId" element={<TeamPage />} />
-            <Route path="/teams/search/:query" element={<TeamSearch />} />
-            <Route path="/races" element={<Races />} />
-            <Route path="/drivers" element={<Drivers />} />
-            <Route path="/drivers/current" element={<DriversCurrent />} />
-            <Route path="/drivers/:year" element={<DriversYear />} />
-            <Route path="/drivers/:year/:driverId" element={<DriverDetail />} />
-            <Route path="/driver/:driverId" element={<DriverDetail />} />
-            <Route path="/drivers/search/:query" element={<DriverSearch />} />
-            <Route path="*" element={<Navigate to="/teams" replace />} />
-          </Routes>
-        </main>
-        <Footer />
-      </BrowserRouter>
-    </div>
-  </>
+    <BrowserRouter>
+      <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-sans antialiased">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/f1" element={<F1Page />} />
+          <Route path="/f1/teams" element={<TeamsPage />} />
+          <Route path="/f1/teams/:slug" element={<TeamDetailPage />} />
+          <Route path="/f1/drivers" element={<DriversPage />} />
+          <Route path="/f1/drivers/:driverId" element={<DriverDetailPage />} />
+          <Route path="/f1/races" element={<RacesPage />} />
+          <Route path="/f1/circuits" element={<CircuitsPage />} />
+            <Route path="/f1/seasons" element={<SeasonsPage />} />
+          <Route path="/f1/results" element={<ResultsPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
 export default App
-// App struct // 
-// Main page for f1, all team names in their colors, logo
-// teams will be clickable and will take you to the team page
-// team page will have the team name, logo, and list of drivers, and their stats
