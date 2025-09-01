@@ -9,6 +9,7 @@ const sections = [
   { to: '/f1/circuits', label: 'Circuits', desc: 'Track layouts & characteristics.' },
   { to: '/f1/seasons', label: 'Seasons', desc: 'Historical championship snapshots.' },
   { to: '/f1/results', label: 'Results', desc: 'Session results: FP, Qualy, Race.' }
+  ,{ to: '/f1/standings', label: 'Standings', desc: 'Drivers & Constructors points.' }
 ]
 
 export default function F1Page() {

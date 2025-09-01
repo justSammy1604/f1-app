@@ -10,6 +10,7 @@ import RacesPage from './pages/f1/RacesPage.jsx'
 import CircuitsPage from './pages/f1/CircuitsPage.jsx'
 import SeasonsPage from './pages/f1/SeasonsPage.jsx'
 import ResultsPage from './pages/f1/ResultsPage.jsx'
+import StandingsPage from './pages/f1/StandingsPage.jsx'
 import './App.css'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/f1/circuits" element={<CircuitsPage />} />
             <Route path="/f1/seasons" element={<SeasonsPage />} />
           <Route path="/f1/results" element={<ResultsPage />} />
+          <Route path="/f1/standings" element={<StandingsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
