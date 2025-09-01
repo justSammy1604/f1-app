@@ -109,7 +109,7 @@ export default function StandingsPage() {
           <div className="flex flex-col gap-1">
             <label className="text-[10px] uppercase tracking-wide text-neutral-500">Type</label>
             <select value={type} onChange={e => changeType(e.target.value)} className="rounded-md border border-neutral-300 dark:border-neutral-700 bg-white/90 dark:bg-neutral-900/60 px-2 py-1.5 text-sm focus:outline-none focus:ring-4 focus:ring-red-500/20">
-              <option value="drivers">Drivers</option>
+              <option value="drivers text">Drivers</option>
               <option value="constructors">Constructors</option>
             </select>
           </div>
@@ -133,13 +133,13 @@ export default function StandingsPage() {
         <div className="overflow-x-auto">
           <table className="min-w-full text-xs md:text-sm">
             <thead className="bg-neutral-50 dark:bg-neutral-800/50">
-              <tr className="text-left">
+              <tr className="text-center">
                 <th className="px-4 py-2 font-semibold">Pos</th>
                 {type === 'drivers' && <th className="px-4 py-2 font-semibold">Driver</th>}
                 {type === 'drivers' && <th className="px-4 py-2 font-semibold hidden md:table-cell">Code</th>}
-                <th className="px-4 py-2 font-semibold">Team</th>
-                <th className="px-4 py-2 font-semibold">Points</th>
-                <th className="px-4 py-2 font-semibold hidden sm:table-cell">Wins</th>
+                <th className="px-4 py-2 font-semibold text">Team</th>
+                <th className="px-4 py-2 font-semibold text-center">Points</th>
+                <th className="px-4 py-2 font-semibold hidden sm:table-cell text-center">Wins</th>
               </tr>
             </thead>
             <tbody>
