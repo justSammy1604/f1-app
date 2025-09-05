@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState, useCallback } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import Button from '../../components/ui/Button.jsx'
 import Pagination from '../../components/Pagination.jsx'
+import BackToF1Button from '../../components/BackToF1Button.jsx'
 
 // Session configuration mapping to endpoints
 const SESSIONS = [
@@ -180,6 +181,7 @@ export default function ResultsPage() {
             <label className="text-[10px] uppercase tracking-wide text-neutral-500">Year</label>
             <input value={year} onChange={e => setYear(e.target.value)} placeholder="e.g. 2024" className="w-28 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white/90 dark:bg-neutral-900/60 px-2 py-1.5 text-sm focus:outline-none focus:ring-4 focus:ring-red-500/20" />
           </div>
+          <BackToF1Button />
             <div className="flex flex-col gap-1">
             <label className="text-[10px] uppercase tracking-wide text-neutral-500">Round</label>
             <input value={round} onChange={e => setRound(e.target.value)} placeholder="e.g. 1" className="w-24 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white/90 dark:bg-neutral-900/60 px-2 py-1.5 text-sm focus:outline-none focus:ring-4 focus:ring-red-500/20" />

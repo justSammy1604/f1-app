@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import BackToF1Button from '../../components/BackToF1Button.jsx'
 import Button from '../../components/ui/Button.jsx'
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card.jsx'
 import Pagination from '../../components/Pagination.jsx'
@@ -186,6 +187,7 @@ export default function RacesPage() {
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 max-w-xl">Browse the season calendar. Pick a season (current or specific year) and optionally a round to spotlight. Quick view shows last and next races.</p>
         </div>
         <div className="flex flex-wrap gap-3 items-end">
+          <BackToF1Button />
           <div className="flex flex-col gap-1">
             <label className="text-[11px] font-medium uppercase tracking-wide text-neutral-500">Season</label>
             <div className="flex items-center gap-2">

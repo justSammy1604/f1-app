@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react'
+import BackToF1Button from '../../components/BackToF1Button.jsx'
 import { useApi } from '../../hooks/useApi.js'
 import Pagination from '../../components/Pagination.jsx'
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card.jsx'
@@ -42,6 +43,7 @@ export default function SeasonsPage() {
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 max-w-xl">Browse historical Formula 1 World Championship seasons. Search by year (e.g. 2021).</p>
         </div>
         <form onSubmit={e => e.preventDefault()} className="flex items-center gap-2 flex-wrap">
+          <BackToF1Button />
           <input
             value={query}
             onChange={onSearch}
