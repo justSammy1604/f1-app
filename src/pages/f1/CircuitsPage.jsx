@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState, useCallback } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import BackToF1Button from '../../components/BackToF1Button.jsx'
 import Button from '../../components/ui/Button.jsx'
 import Pagination from '../../components/Pagination.jsx'
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card.jsx'
@@ -120,6 +121,7 @@ export default function CircuitsPage() {
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 max-w-xl">Explore Formula 1 circuits. Search by country, city, or name (e.g. "japan"). Click a card for detailed stats.</p>
         </div>
         <form onSubmit={e => e.preventDefault()} className="flex items-center gap-2 flex-wrap">
+          <BackToF1Button />
           <input
             value={query}
             onChange={e => updateQuery(e.target.value)}
