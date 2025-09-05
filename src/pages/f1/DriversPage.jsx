@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
+import BackToF1Button from '../../components/BackToF1Button.jsx'
 import { useApi } from '../../hooks/useApi.js'
 import Button from '../../components/ui/Button.jsx'
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card.jsx'
@@ -88,6 +89,7 @@ export default function DriversPage() {
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 max-w-xl">Browse drivers by season or all‑time. Search for a surname (e.g. "verstappen").</p>
         </div>
         <form onSubmit={e => e.preventDefault()} className="flex items-center gap-3 flex-wrap">
+          <BackToF1Button />
           <input
             type="text"
             placeholder="Search drivers..."

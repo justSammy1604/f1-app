@@ -3,6 +3,7 @@ import { useParams, useSearchParams, Link } from 'react-router-dom'
 import { useApi } from '../../hooks/useApi.js'
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card.jsx'
 import Button from '../../components/ui/Button.jsx'
+import BackToF1Button from '../../components/BackToF1Button.jsx'
 
 const API_BASE = 'https://f1api.dev/api'
 
@@ -42,7 +43,8 @@ export default function DriverDetailPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <div className="flex items-center gap-4 mb-8 flex-wrap">
-        <Button variant="outline" onClick={() => window.history.back()}>← Back</Button>
+        <BackToF1Button />
+        <Button variant="ghost" onClick={() => window.history.back()} className="text-sm">← Back</Button>
         <h1 className="text-3xl font-extrabold tracking-tight">{driver?.name} {driver?.surname}</h1>
         <span className="text-xs rounded bg-red-600/10 text-red-600 px-2 py-1">{season === 'current' ? 'Current Season' : season}</span>
       </div>
