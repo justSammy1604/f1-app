@@ -3,6 +3,7 @@ import { useParams, Link, useSearchParams } from 'react-router-dom'
 import { useApi } from '../../hooks/useApi.js'
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card.jsx'
 import Button from '../../components/ui/Button.jsx'
+import BackToF1Button from '../../components/BackToF1Button.jsx'
 
 const API_BASE = 'https://f1api.dev/api'
 
@@ -31,8 +32,9 @@ export default function TeamDetailPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
       <div className="flex items-center gap-4 mb-8 flex-wrap">
-        <Button variant="outline" as-child="true" onClick={() => window.history.back()}>← Back</Button>
-  <h1 className="text-3xl font-extrabold tracking-tight">{team?.name || team?.teamName || slug}</h1>
+        <BackToF1Button />
+        <Button variant="ghost" onClick={() => window.history.back()} className="text-sm">← Back</Button>
+        <h1 className="text-3xl font-extrabold tracking-tight">{team?.name || team?.teamName || slug}</h1>
       </div>
 
       <div className="grid gap-8 md:grid-cols-3">

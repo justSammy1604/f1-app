@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react'
+import BackToF1Button from '../../components/BackToF1Button.jsx'
 import { useSearchParams, Link } from 'react-router-dom'
 import { useApi } from '../../hooks/useApi.js'
 import Button from '../../components/ui/Button.jsx'
@@ -93,6 +94,7 @@ export default function TeamsPage() {
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 max-w-xl">Browse teams by season or view an all‑time list. Use search to quickly locate a team (e.g. "ferrari").</p>
         </div>
         <form onSubmit={e => e.preventDefault()} className="flex items-center gap-3 flex-wrap">
+          <BackToF1Button />
           <input
             type="text"
             placeholder="Search teams..."

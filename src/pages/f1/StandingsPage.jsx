@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import BackToF1Button from '../../components/BackToF1Button.jsx'
 import { useSearchParams } from 'react-router-dom'
 import Button from '../../components/ui/Button.jsx'
 import Pagination from '../../components/Pagination.jsx'
@@ -102,6 +103,7 @@ export default function StandingsPage() {
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 max-w-2xl">View Formula 1 Drivers & Constructors standings for any season (e.g. 2021) or the current live championship.</p>
         </div>
         <form onSubmit={submit} className="flex flex-wrap items-end gap-3">
+          <BackToF1Button />
           <div className="flex flex-col gap-1">
             <label className="text-[10px] uppercase tracking-wide text-neutral-500">Year (current or YYYY)</label>
             <input value={year} onChange={e => setYear(e.target.value)} placeholder="current" className="w-28 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white/90 dark:bg-neutral-900/60 px-2 py-1.5 text-sm focus:outline-none focus:ring-4 focus:ring-red-500/20" />
