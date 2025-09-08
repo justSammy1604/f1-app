@@ -176,12 +176,12 @@ export default function ResultsPage() {
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Session Results</h1>
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 max-w-2xl">Browse Formula 1 session results. Search by season year and round OR leave blank to view the latest Grand Prix sessions. Switch between FP, Qualifying, Sprint and Race data.</p>
         </div>
+        <BackToF1Button />
         <form onSubmit={handleSearchSubmit} className="flex flex-wrap items-end gap-3">
           <div className="flex flex-col gap-1">
             <label className="text-[10px] uppercase tracking-wide text-neutral-500">Year</label>
             <input value={year} onChange={e => setYear(e.target.value)} placeholder="e.g. 2024" className="w-28 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white/90 dark:bg-neutral-900/60 px-2 py-1.5 text-sm focus:outline-none focus:ring-4 focus:ring-red-500/20" />
           </div>
-          <BackToF1Button />
             <div className="flex flex-col gap-1">
             <label className="text-[10px] uppercase tracking-wide text-neutral-500">Round</label>
             <input value={round} onChange={e => setRound(e.target.value)} placeholder="e.g. 1" className="w-24 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white/90 dark:bg-neutral-900/60 px-2 py-1.5 text-sm focus:outline-none focus:ring-4 focus:ring-red-500/20" />
