@@ -13,7 +13,7 @@ const sections = [
 ]
 
 export default function F1Page() {
-  return (
+  return ( 
     <div className="mx-auto max-w-6xl px-4 py-16">
       <header className="mb-14">
         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-red-600 via-red-400 to-white bg-clip-text text-transparent">Formula 1 Hub</h1>
