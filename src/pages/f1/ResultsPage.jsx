@@ -159,7 +159,7 @@ export default function ResultsPage() {
       code: driver.shortName,
       team: team.teamName,
       time,
-      points: points !== undefined ? points : null
+      points: points !== undefined ? points : null 
     }
   }
 

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 // Generic API data fetching hook with abort + simple cache by URL
-const cache = new Map()
+const cache = new Map() 
 
 export function useApi(url, { skip = false, transform } = {}) {
   const [data, setData] = useState(null)
